@@ -1,6 +1,6 @@
 from django.urls import path
-from chatApi.src.classes.Action import Action
-from chatApi.src.classes.MethodActionExecutor import MethodActionExecutor
+from chatApi.src.framework.classes.Action import Action
+from chatApi.src.framework.classes.MethodActionExecutor import MethodActionExecutor
 
 class Router:
     

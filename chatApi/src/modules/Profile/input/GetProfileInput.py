@@ -1,9 +1,10 @@
-from chatApi.src.classes.Input import Input
+from chatApi.src.framework.classes.Input import Input
+from chatApi.src.classes.validators.ProfileValidator import ProfileValidator
 
 class GetProfileInput(Input):
 
-    def setInputFromBody(self, body):
+    def __init__(self, body):
         self.username = body['username']
 
     def validate(self):
-        return len(self.username) <= 50
+        return ProfileValidator.validateUsername(self.username)

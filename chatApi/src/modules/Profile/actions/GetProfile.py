@@ -1,16 +1,15 @@
-from chatApi.src.classes.Action import Action
+from chatApi.src.framework.classes.Action import Action
 from chatApi.src.modules.Profile.services.ProfileService import ProfileService
 from chatApi.src.modules.Profile.input.GetProfileInput import GetProfileInput
 
 class GetProfile(Action):
 
-    def __init__(self):
-        super().__init__()
-        self.service = ProfileService()
-        self.input = GetProfileInput()
+    def setInput(self, body):
+        self.input = GetProfileInput(body)
 
     def execute(self):
-        return self.service.get_profile(self.input.username)
+        service = ProfileService()
+        return service.get_profile(self.input.username)
 
     def validateInput(self):
         return self.input.validate()
