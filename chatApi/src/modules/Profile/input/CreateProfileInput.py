@@ -1,9 +1,9 @@
-from chatApi.src.framework.classes.Input import Input
+from chatApi.src.framework.classes.InputBase import InputBase
 from chatApi.src.classes.validators.ProfileValidator import ProfileValidator
 
-class CreateProfileInput(Input):
+class CreateProfileInput(InputBase):
 
-    def __init__(self, body):
+    def set_from_body(self, body):
         self.username = body['username']
         self.password = body['password']
         self.first_name = body['first_name']

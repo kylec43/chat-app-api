@@ -1,9 +1,9 @@
 import abc
 
-class Input:
+class InputBase:
 
     @abc.abstractmethod
-    def setInputFromBody(body):
+    def set_from_body(body):
         pass
 
     @abc.abstractmethod
