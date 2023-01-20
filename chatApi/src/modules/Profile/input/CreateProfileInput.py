@@ -1,5 +1,5 @@
 from chatApi.src.framework.classes.InputBase import InputBase
-from chatApi.src.classes.validators.ProfileValidator import ProfileValidator
+from chatApi.src.classes.validators.Validator import Validator
 
 class CreateProfileInput(InputBase):
 
@@ -10,4 +10,9 @@ class CreateProfileInput(InputBase):
         self.last_name = body['last_name']
 
     def validate(self):
-        return ProfileValidator.validateUsername(self.username) and ProfileValidator.validatePassword(self.password) and ProfileValidator.validateFirstName(self.first_name) and ProfileValidator.validateLastName(self.last_name)
+        return (
+            Validator.validateUsername(self.username) and 
+            Validator.validatePassword(self.password) and 
+            Validator.validateFirstName(self.first_name) and 
+            Validator.validateLastName(self.last_name)
+        )
