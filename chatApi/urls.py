@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from chatApi.src.modules.Profile.ProfileRoutes import ProfileRoutes
+from chatApi.src.framework.classes.PathContainer import PathContainer
 
-profileRoutes = ProfileRoutes()
+pathContainer = PathContainer()
+pathContainer.add(
+    ProfileRoutes
+)
+
+paths = pathContainer.getPaths()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    *profileRoutes
+    *paths
 ]
