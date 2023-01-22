@@ -3,8 +3,8 @@ from chatApi.src.classes.validators.Validator import Validator
 
 class GetProfileInput(InputBase):
 
-    def set_from_body(self, body):
-        self.username = body['username']
+    def set(self, data: dict):
+        self.username = data['username']
 
     def validate(self):
-        return Validator.validateUsername(self.username)
+        return Validator.validate_username(self.username)

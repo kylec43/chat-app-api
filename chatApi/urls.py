@@ -15,17 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from chatApi.src.modules.Profile.ProfileRoutes import ProfileRoutes
-from chatApi.src.framework.classes.PathContainer import PathContainer
+from chatApi.src.modules.Profile.ProfilePaths import ProfilePaths
+from chatApi.src.modules.Profile.views.GetProfileView import GetProfileView
+from django.urls import re_path
+from rest_framework.authtoken.views import obtain_auth_token
 
-pathContainer = PathContainer()
-pathContainer.add(
-    ProfileRoutes
-)
+paths = [
+    *ProfilePaths()
+]
 
-paths = pathContainer.getPaths()
 
 urlpatterns = [
+    path('auth/login', obtain_auth_token),
     path('admin/', admin.site.urls),
     *paths
 ]
