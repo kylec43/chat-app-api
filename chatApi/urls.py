@@ -19,6 +19,7 @@ from chatApi.src.modules.Profile.ProfilePaths import ProfilePaths
 from chatApi.src.modules.Profile.views.GetProfileView import GetProfileView
 from django.urls import re_path
 from rest_framework.authtoken.views import obtain_auth_token
+from django.conf.urls import include
 
 paths = [
     *ProfilePaths()
@@ -26,7 +27,7 @@ paths = [
 
 
 urlpatterns = [
-    path('auth/login', obtain_auth_token),
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("profile/auth/", include('oauth2_provider.urls', namespace="oauth2_provider")),
     *paths
 ]

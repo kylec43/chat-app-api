@@ -6,7 +6,7 @@ class PathBuilder:
     def __init__(self):
         self._path_views = {}
 
-    def set_view(self, path: str, view: CreateAPIView):
+    def set_path(self, path: str, view: CreateAPIView):
         self._path_views[path] = view
     
     def __build_paths__(self) -> list:

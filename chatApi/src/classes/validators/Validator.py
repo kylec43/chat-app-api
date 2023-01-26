@@ -6,16 +6,16 @@ class Validator:
 
     @staticmethod
     def validate_username(username):
-        return Validator.validate_length(username, 0, 50)
+        return Validator.validate_length(username, 0, 128)
 
     @staticmethod
     def validate_password(password):
-        return Validator.validate_length(str(password), 0, 50)
+        return Validator.validate_length(str(password), 0, 150)
 
     @staticmethod
     def validate_first_name(first_name):
-        return Validator.validate_length(first_name, 0, 50)
+        return Validator.validate_length(first_name, 0, 150)
 
     @staticmethod
     def validate_last_name(last_name):
-        return Validator.validate_length(last_name, 0, 50)
+        return Validator.validate_length(last_name, 0, 150)
