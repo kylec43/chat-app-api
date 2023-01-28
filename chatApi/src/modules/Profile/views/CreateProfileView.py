@@ -18,4 +18,4 @@ class CreateProfileView(CreateAPIView):
         if not input.validate():
             raise Exception("Invalid input")
 
-        return self.profile_service.create_profile(input.to_dict())
+        return self.profile_service.create_profile(input)

@@ -10,5 +10,5 @@ class InputBase:
     def validate(self):
         pass
 
-    def to_dict(self):
+    def serialize(self):
         return self.__dict__
