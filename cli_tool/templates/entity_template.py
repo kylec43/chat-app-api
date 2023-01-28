@@ -11,8 +11,7 @@ class Profile(models.Model):
         db_table = 'profile'
 
     def __str__(self):
-        return f"{{self.id}} {{self.column}}"
-    """
+        return f"{{self.id}} {{self.column}}\""""
 
 
 def entity_serializer_profile_template(module_name: str):
@@ -23,8 +22,7 @@ from {config["project_name"]}.src.modules.{module_name}.entities.Profile import 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['id', 'username', 'password', 'first_name', 'last_name']
-    """
+        fields = ['id', 'username', 'password', 'first_name', 'last_name']"""
 
 
 def entity_serializer_auth_user_template():
@@ -48,5 +46,4 @@ class AuthUserSerializer(serializers.ModelSerializer):
         user = super(AuthUserSerializer, self).create(validated_data)
         user.set_password(validated_data['password'])
         user.save()
-        return user
-    """
+        return user"""

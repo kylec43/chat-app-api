@@ -22,8 +22,7 @@ class CreateProfileView(CreateAPIView):
         if not input.validate():
             raise Exception("Invalid input")
 
-        return self.profile_service.create_profile(input.to_dict())
-    """
+        return self.profile_service.create_profile(input)"""
 
 
 def view_get_all_profiles_template(module_name: str):
@@ -39,8 +38,7 @@ class GetAllProfilesView(CreateAPIView):
         self.profile_service = service_factory.ProfileService()
 
     def get(self, request):
-        return self.profile_service.get_all_profiles()
-        """
+        return self.profile_service.get_all_profiles()"""
 
 
 def view_get_profile_template(module_name: str):
