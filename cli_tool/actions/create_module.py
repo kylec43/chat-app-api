@@ -21,15 +21,17 @@ def create_module(module_name: str):
 
 
     # Create Entities
-    os.mkdir(f"../{config['project_name']}/src/modules/{module_name}/entities")
-    with open(f"../{config['project_name']}/src/modules/{module_name}/entities/AuthUserSerializer.py", 'w') as entityFile:
-        entityFile.write(entity_serializer_auth_user_template())
+    # os.mkdir(f"../{config['project_name']}/src/entities")
+    # os.mkdir(f"../{config['project_name']}/src/entities/base")
+    # os.mkdir(f"../{config['project_name']}/src/entities/serializers")
+    # with open(f"../{config['project_name']}/src/modules/{module_name}/entities/AuthUserSerializer.py", 'w') as entityFile:
+    #     entityFile.write(entity_serializer_auth_user_template())
 
-    with open(f"../{config['project_name']}/src/modules/{module_name}/entities/Profile.py", 'w') as entityFile:
-        entityFile.write(entity_serializer_profile_template(module_name))
+    # with open(f"../{config['project_name']}/src/modules/{module_name}/entities/Profile.py", 'w') as entityFile:
+    #     entityFile.write(entity_serializer_profile_template(module_name))
 
-    with open(f"../{config['project_name']}/src/modules/{module_name}/entities/ProfileSerializer.py", 'w') as entityFile:
-        entityFile.write(entity_profile_template())
+    # with open(f"../{config['project_name']}/src/modules/{module_name}/entities/ProfileSerializer.py", 'w') as entityFile:
+    #     entityFile.write(entity_profile_template())
 
 
     # Create Views

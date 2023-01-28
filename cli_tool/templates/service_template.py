@@ -2,8 +2,8 @@ from cli_tool.config import config
 
 def service_template(module_name: str):
 
-    return f"""from {config["project_name"]}.src.framework.classes.InputBase import InputBase
-from {config["project_name"]}.src.modules.{module_name}.entities.AuthUserSerializer import AuthUserSerializer
+    return f"""from {config["project_name"]}.src.entities.serializers.AuthUserSerializer import AuthUserSerializer
+from {config["project_name"]}.src.framework.classes.InputBase import InputBase
 from django.contrib.auth import get_user_model
 from django.http import JsonResponse
 from rest_framework.authtoken.models import Token

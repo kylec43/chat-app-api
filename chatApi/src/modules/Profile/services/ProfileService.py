@@ -1,5 +1,5 @@
+from chatApi.src.entities.serializers.AuthUserSerializer import AuthUserSerializer
 from chatApi.src.framework.classes.InputBase import InputBase
-from chatApi.src.modules.Profile.entities.AuthUserSerializer import AuthUserSerializer
 from django.contrib.auth import get_user_model
 from django.http import JsonResponse
 from rest_framework.authtoken.models import Token
